@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>网站开发</title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
+	<script src="./jQuery/jquery-3.1.1.min.js"></script>
+	<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"></style>
+	<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+<style type="text/css">
+*{margin:0;padding:0;}
+body{
+	background:#ADD8E6; 
+}
+.container{
+	width:940px; 
+	padding:0 0; 
+	background:#BC8F8F; 
+}
+.barone{
+      position: relative;
+      height:30px; 
+      min-height:40px;
+      /*background:rgb(107,102,92); */
+  }
+  .team-inf{
+      position: absolute;
+      left:2px;top:5px; 
+      font-size:16px; 
+      color:#fff; 
+      width: 200px;
+}
+ .logo-group{
+     position: absolute;
+     right: 30px;
+     padding: 0;
+     width: 120px;
+     height: 20px;
+ }
+ .logo-group ul li{
+ 	list-style-type:none; 
+ 	float:right;
+ 	color:#fff;  
+ }
+ .logo-group ul li span{
+ 	color:red; 
+ }
+ .logo-group ul li a{
+ 	margin-left: 5px;
+ 	color:#fff;
+ }
+ .logo-group ul li a:hover{
+ 	color:red; 
+ }
+ .form-group input{
+ 	width:200px;
+ 	height:30px;
+ }
+ .form-group button{
+ 	height:30px; 
+ 	width:35px; 
+ 	padding-left:3px;  
+ }
+ .dropdown-menu{
+	background:rgb(112,128,144); 
+ }
+ .form-control-inline {
+ 	margin-right:10px; 
+ 	width:230px; 
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.brand-head{
+	height:38px;
+	line-height:38px; 
+	margin-top:-10px; 
+	border-bottom:2px solid #FF4500;  
+}
+.brand-head p{
+	font-family:"微软雅黑"; 
+}
+.brand-right{
+	width:300px; 
+	margin-top:2px; 
+	background:#E6E6FA ; 
+}
+.brand-right div{
+	border-bottom:2px solid #fff; 
+	opacity:0.7; 
+}
+.brand-right div p span{
+	font-style: italic; 
+	font-weight:bolder; 
+	margin-left:5px;
+	margin-right:2px;  
+}
+.brand-right div p a{
+	font-size:12px; 
+	color:black; 
+}
+.brand-right div p a:hover{
+	color:red; 
+	opacity:1; 
+}
+.brand-right h5{
+	width:300px; 
+	height:30px; 
+	color:#fff; 
+	font-weight:bolder; 
+	background:#8B4513; 
+	line-height:30px; 
+	padding-left:4px;
+	opacity:0.6;    
+}
+.brand-right h5:hover{
+	text-align:center; 
+	opacity:1; 
+}
+.brand-left-content ul li{
+	height:270px; 
+	list-style-type:none; 
+	margin-right:40px; 
+	border-bottom:1px dotted #AAAAAA; 
+	font-family:"微软雅黑";
+}
+.brand-left-content ul li h4{
+	font-size:15px;
+	font-weight:bolder;   	
+}
+.brand-left-content ul li h4 a{
+	color:#000; 
+}
+.brand-left-content ul li p span{
+	font-size:12px; 
+	margin-right:20px; 
+}
+.brand-left-content-right{
+	width:500px; 
+}
+.brand-left-content-right img{
+	margin-right:5px; 
+}
+.brand-left-content-right span{
+	height:200px; 
+	line-height:30px;
+	font-size:14px; 
+}
+.brand-left-content-right-look{
+	float:right;
+	margin-top:25px;  
+}
+.footer-band{
+	width:940px; 
+	height:40px;
+	line-height:40px; 
+	margin-top: 10px;
+	background:#000000; 	
+}
+.footer-band p{
+	font-size:12px; 
+	text-align:center; 
+}
+.pagination-all{
+	width:300px; 
+	list-style-type:none;
+	margin-top:6px;
+	margin-left:200px;  
+}
+.pagination{
+	margin:-8px 4px 0 4px;
+}
+.pagination-subtraction{
+	width:10px; 
+	margin-right:10px;  
+} 
+.pagination-plus{
+	width:10px; 
+	margin-left:10px; 
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="contain">
+	<div class="barone">
+		<div class="team-inf border-group">
+            <div class="team-name">Welcome to my blog!</div>
+        </div>
+        <div class="logo-group border-group">
+	        <ul>
+				<li><a href="index.html">登陆</a></li>
+				<li><a href="register.html">注册</a></li>
+				<li>当前访问人数：<span>0</span></li>
+			</ul>
+        </div> 
+    </div>
+
+	<nav class = "navbar navbar-default" role = "navigation">  
+        <ul class="nav navbar-nav">  
+            <li><a href="#">网站首页</a></li>  
+            <li class="active"><a href="#">网站开发</a></li>   
+              
+            <li class="dropdown">  
+                <a href="#" class="dropdown-toggle" data-toggle = "dropdown">博客家园 <span class="caret"></span></a>  
+  
+                <ul class="dropdown-menu">  
+                    <li><a href="#">html+css学习</a></li>  
+                    <li><a href="#">javascript学习</a></li>  
+                    <li><a href="#">jquery学习</a></li>  
+                    <li class="divider"></li>  
+                    <li><a href="#">bootstrap学习</a></li>  
+                    <li><a href="#">less/sass学习</a></li>  
+                    <li><a href="#">angularJS学习</a></li> 
+                </ul>  
+            </li> 
+            <li><a href="#">关于我</a></li>  
+            <li><a href="#">留言板</a></li> 
+        </ul>  
+    </nav>  
+    </div>
+	<div class="brand-head">
+		<p>
+			<span class="pull-left">您当前的位置：<a href="demo.html">首页</a>><a href="#">网站开发</a></span> 	
+   			<form action="http://baidu.com" rol="search" class="team-intro border-group pull-right">
+				 	<input type="text" class="form-control-inline pull-left" placeholder="请输入关键词" />
+			 		<button type="submit" class="btn btn-default pull-left">搜索</button>
+			</form>      
+		</p>
+	</div>
+	<div class="brand-left pull-left" style="width:640px; ">
+		<div class="brand-left-content">
+			<!--1-->
+			<ul class="brand-left-content-classify" style="display: block;">
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+			</ul>
+			<!--2-->
+			<ul style="display: none;">
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例2</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例2</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例2</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例2</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+			</ul>
+
+			<!--3-->
+			<ul style="display: none;">
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例3</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例3</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例3</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+			</ul>
+			<!--4-->
+			<ul style="display: none;">
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例4</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例4</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例4</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+			</ul>
+			<!--5-->
+			<ul style="display: none;">
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例5</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+				<li>
+					<h4><a href="#">CSS实现三栏布局的四种方法示例5</a></h4>
+					<p><span>作者：某某</span><span>发布时间：某年某月某日</span><span>分类：css魔幻艺术</span></p>
+					<div class="brand-left-content-right">
+						<a href="#"><img class="pull-left" src="./image/brandLeftimgone.jpg"></a>
+						<span>可能有人不理解三栏布局是什么，其实三栏布局页面分为左中右三部分，然后对中间一部分做自适应的一种布局方式，下面这篇文章就给大家详细介绍了CSS实现三栏布局的四种方法，需要的朋友可以参考借鉴，下面来一起看看吧。</span>
+						<p><a class="brand-left-content-right-look" href="#">查看详情</a></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+		<ul class="pagination-all">
+				<li class="pagination-subtraction pull-left"><a class="paginationSubtraction href="#">&laquo;</a></li>
+			<ul class="pagination pull-left" id="pagination">
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+			</ul>
+				<li class="pagination-plus pull-left"><a class="paginationPlus" href="#">&raquo;</a></li>
+		</ul>
+	</div>
+	<div class="brand-right pull-right">
+		<div class="brand-right-new">
+			<h5>最近更新</h5>
+			<p><span>1</span><a href="#">JavaScript的this指向问题深度解析</a></p>	
+			<p><span>2</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>3</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>4</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>5</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>6</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>7</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>8</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>9</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>10</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+		</div>
+		<div class="brand-right-hot">
+			<h5>热门点击</h5>
+			<p><span>1</span><a href="#">JavaScript的this指向问题深度解析</a></p>	
+			<p><span>2</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>3</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>4</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>5</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>6</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>7</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>8</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>9</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>10</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+		</div>
+		<div class="brand-right-hot">
+			<h5>热评文章</h5>
+			<p><span>1</span><a href="#">JavaScript的this指向问题深度解析</a></p>	
+			<p><span>2</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>3</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>4</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+			<p><span>5</span><a href="#">JavaScript的this指向问题深度解析</a></p>
+		</div>
+		<div class="brand-right-hot">
+			<h5>最近访客</h5>
+			<span><a href="#"><img src=""></a></span>	
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="footer-band">
+		<p>本站采用创作共用版权 CC BY-NC-ND/2.5/CN 许可协议 鄂ICP备00000000号-0</p>
+	</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".paginationSubtraction").click(function(){
+		var $index=$(".pagination").find('.active a').text();
+		$index= parseInt($index,10)-parseInt(2,10);
+		if ($index<0) {
+		$index=0;	
+		}
+		 Disfunction($index);
+	});
+
+	$(".paginationPlus").click(function(){
+		var $index1=Number($(".pagination").find('.active a').text());
+		if ($index1>4) {
+			$index1=4;
+		}
+		 Disfunction($index1);
+	});
+
+	$("#pagination li").each(function(){			
+		$(this).click(function(){
+			var X=$(this).index();
+			Disfunction(X);
+	});
+})
+	function Disfunction(X){
+		$("#pagination li").eq(X).addClass("active");
+		$("#pagination li").eq(X).siblings().removeClass("active");
+		$(".brand-left-content ul").eq(X).show();
+		$(".brand-left-content ul").eq(X).siblings().hide();
+	}
+})
+</script>
+</div>

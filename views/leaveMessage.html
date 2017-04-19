@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>留言板</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen">
+     <link rel="stylesheet" href="javascripts/sharejs/share.css">
+     <script type="text/javascript" src="javascripts/template.js-master/template.js"></script>
+<style type="text/css">
+*{margin:0;padding:0;}
+body{
+    background:#ADD8E6; 
+}
+.container{
+    width:940px; 
+    padding:0 0; 
+    background:rgb(112,128,144); 
+}
+.barone{
+      position: relative;
+      height:30px; 
+      min-height:40px;
+      /*background:rgb(107,102,92); */
+}
+.team-inf{
+      position: absolute;
+      left:2px;top:5px; 
+      font-size:16px; 
+      color:#fff; 
+      width: 200px;
+}
+.logo-group{
+     position: absolute;
+     right: 30px;
+     width: 220px;
+     height: 20px;
+}
+.logo-group ul li:last-child{
+    margin-right:10px; 
+}
+.logo-group ul li{
+    list-style-type:none; 
+    float:right;
+    color:#fff; 
+}
+.logo-group ul li span{
+    color:red; 
+}
+.logo-group ul li a{
+    padding-right:5px; 
+    color:#fff;
+}
+.logo-group ul li a:hover{
+    color:red; 
+}
+.form-group input{
+    width:200px;
+    height:30px;
+}
+.form-group button{
+    height:30px; 
+    width:35px; 
+    padding-left:3px;  
+}
+.dropdown-menu{
+    background:rgb(112,128,144); 
+}
+.form-control-inline {
+    margin-right:10px; 
+    width:230px; 
+    height: 34px;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.brand-head{
+    line-height:38px;  
+    background:#FAFAD2;  
+}
+.brand-head p{
+    font-family:"微软雅黑"; 
+}
+.team-intro{
+    padding-top:5px; 
+}
+.btn-default{
+    margin-right:2px; 
+}
+.footer-band{
+    width:940px; 
+    height:58px; 
+    padding-top:5px; 
+    background:#000000;     
+}
+.footer-band p{
+    color:#fff; 
+    font-size:12px;  
+    opacity:0.5; 
+    text-align:center; 
+}
+#mesage{
+    margin-top:20px;    
+}
+#mess{
+    height:80px;
+    line-height:30px;  
+    background:#87CECB; 
+    margin-top:10px; 
+}
+#mess-new{
+    width:80px;
+    height:30px;
+    line-height:30px; 
+    border-radius:5px;    
+    color:#fff;
+    font-weight:bolder; 
+    background:#444444; 
+}
+#mes-con{
+    font-size:16px; 
+}
+#mess-name{
+    font-size:20px;
+    color: #FF4500;   
+}
+#mess-date{
+    float:left; 
+    font-size:14px; 
+}
+#mess-del{
+    float:right; 
+    font-size:14px; 
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="contain">
+        <div class="barone">
+            <div class="team-inf border-group">
+                <div class="team-name">Welcome to my blog!</div>
+            </div>
+            <div class="logo-group border-group">
+                <ul>
+                    <li>Your name:<a href="/login" name="username" id="username" required><%-user.name%></a></li>
+                    <li><a href="/index">注销登陆</a></li>
+                    <li><a href="/register">注册</a></li>
+                    <li>当前访问人数：<span>0</span></li>
+                </ul>
+            </div> 
+        </div>
+
+        <nav class = "navbar navbar-default" role = "navigation">  
+            <ul class="nav navbar-nav">  
+                <li><a href="/home1">网站首页</a></li>  
+                <li><a href="/brandInternet">网站开发</a></li>   
+                <li class="dropdown">  
+                    <a href="#" class="dropdown-toggle" data-toggle = "dropdown">博客家园 <span class="caret"></span></a>  
+      
+                    <ul class="dropdown-menu">  
+                        <li><a href="http://my.csdn.net/xiaobai_dreamWeaver">我的CSDN</a></li>  
+                        <li><a href="https://github.com/lqdreaming">我的github</a></li>  
+                        <li class="divider"></li>  
+                        <li><a href="http://www.qdfuns.com/">W3c前端网</a></li>  
+                        <li><a href="http://www.imooc.com/">慕课网</a></li> 
+                    </ul>  
+                </li> 
+                <li><a href="/aboutMe">关于我</a></li>  
+                <li class="active"><a href="#">留言板</a></li> 
+            </ul>  
+        </nav>  
+    </div>
+    <div class="clearfix"></div>
+    <div class="brand-head">
+            <p>
+                <span class="pull-left">您当前的位置：<a href="index.html">首页</a><a href="#">>留言板</a></span>    
+                    <form action="http://baidu.com" rol="search" class="team-intro border-group pull-right">
+                            <input type="text" class="form-control-inline pull-left" placeholder="请输入关键词" />
+                            <button type="submit" class="btn btn-default pull-left">搜索</button>
+                    </form>      
+            </p>
+        <div class="clearfix"></div>  
+            <h3 class="t_nav">你，并不是我生命中匆匆而逝的过客，留下一片足迹，我们永远都在。</h3>
+            <h4><a href="/messageBoard" class="n2">留言版</a></h4>
+        <div class="ui minimal comments">
+          <form class="ui reply form" method="post" onsubmit="return false">
+            <div class="field">
+              <textarea name="content" id="content" style="width:900px;height:150px;" required></textarea>
+            </div>
+            <input style="margin-top:5px; " type="submit" id="mes" class="btn btn-sm btn-info" value="留言" />
+          </form>
+        </div>
+        <div id="mesage">
+        <h4 id="mess-new">最新留言</h4>
+            <div id="mess-main" style="height:500px;">
+                <%if(data && (data.length>4)){%>
+                <%for (var i=data.length-1;i>=data.length-5;i--){%>
+                <div id='mess'>
+                    <p id='mess-con'><span id='mess-name'><%=data[i].name%>：</span><%=data[i].comment%></p>
+                    <p id='mess-extra'><span id='mess-date'><%=data[i].date%></span><a id='mess-del' href='javascript:;'>删除</a></p>
+                    <div class="clearfix"></div>
+                </div>
+                <%}%>
+                <div id="mes-main-extra" style="display:none;">
+                    <%for (var i=data.length-6;i>=0;i--){%>
+                        <div id='mess'>
+                        <p id='mess-con'><span id='mess-name'><%=data[i].name%>：</span><%=data[i].comment%></p>
+                        <p id='mess-extra'><span id='mess-date'><%=data[i].date%></span><a id='mess-del' href='javascript:;'>删除</a></p>
+                        <div class="clearfix"></div>
+                        </div>
+                    <%}%>  
+                </div>
+                <button id="mes-btn" class="btn btn-primary" data-loading-text="Loading..." type="button">更多评论 </button>
+                <%}else if(data.length>0 && data.length<5){%>
+                <%for (var i=data.length-1;i>=0;i--){%>
+                <div id='mess'>
+                    <p id='mess-con'><span id='mess-name'><%=data[i].name%>：</span><%=data[i].comment%></p>
+                    <p id='mess-extra'><span id='mess-date'><%=data[i].date%></span><a id='mess-del' href='javascript:;'>删除</a></p>
+                    <div class="clearfix"></div>
+                </div>
+                <%}%>
+                <%}else{%>
+                <div id='mess'><h4>暂无评论</h4></div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="footer-band">
+        <p>博客已稳定运行 <span></span> | <a href="/sitemap.html" target="_blank">网站地图</a></p>
+        <p>Design 2017-2019 @ <a title="刘琦欢迎您的来访,希望您再次光临！" href="/index" target="_blank">刘琦个人博客</a> 保留所有权利 蜀ICP备15036389号</p>
+            <!--<script src="https://s4.cnzz.com/z_stat.php?id=1259183793&web_id=1259183793" language="JavaScript"></script>-->
+    </div>
+</div>
+
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/sharejs/share.js"></script>
+<script>
+$(function(){
+    $("#mes-back").click(function(){
+        $(this).hide();  
+       $("#mes-btn").show(); 
+       //$("#mes-main-extra").hide();
+       $("#mes-main-extra").css('display','none');
+    }); 
+
+    $("#mes-btn").click(function(){
+        $("#mes-main-extra").show(); 
+        $(this).hide(); 
+        $("#mess-main").prepend("<button id='mes-back' class='btn btn-primary' data-loading-text='Loading...' type='button'>收起评论 </button></div>")
+    });
+
+    $("#mes").click(function(){ 
+        var content = $("#content").val();
+        var username = $("#username").html();
+        var date=CurentTime();
+        console.log(date);
+        var data = {"uname":username,"ucon":content,"udate":date};
+        $.ajax({ 
+            url: '/leaveMessage',
+            type: 'post',
+            data: data,
+            success: function(doc,status){ 
+                if(status == 'success'){ 
+                    console.log(doc);
+                    doc=JSON.parse(doc);
+                   $("#mess-main").prepend("<div id='mess'><p id='mess-con'><span id='mess-name'>"+doc.name+"：</span>"+doc.comment+"</p><p id='mess-extra'><span id='mess-date'>"+doc.date+"</span><a id='mess-del' href='javascript:;' >删除</a></p></div><div class='clearfix'></div>");
+                }  
+            }
+        }); 
+    });
+    function CurentTime(){ 
+        var now = new Date();
+        var year = now.getFullYear();       //年
+        var month = now.getMonth() + 1;     //月
+        var day = now.getDate();            //日
+        var hh = now.getHours();            //时
+        var mm = now.getMinutes();          //分
+        var clock = year + "-";
+        if(month < 10)
+            clock += "0";
+        clock += month + "-";
+        if(day < 10)
+            clock += "0";  
+        clock += day + " ";
+        if(hh < 10)
+            clock += "0";  
+        clock += hh + ":";
+        if (mm < 10) clock += '0'; 
+        clock += mm; 
+        return(clock); 
+    }; 
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>个人注册</title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen">
+<style type="text/css">
+*{margin:0;padding:0;}
+.container{
+	width:500px; 
+	height:400px; 
+	background:#EEE8AA;  	
+}
+.container h4{
+	height:30px; 
+	line-height:30px;
+	text-align:center;  
+	color:#fff;  
+	background:#666699;
+}
+.container h5{
+	font-size:16px; 
+	color:#3333CC; 
+	line-height:30px;  
+	font-weight:bolder; 
+}
+.label{
+	display:inline-block; 
+	width:37px; 
+	height:20px; 
+	background:#888888;
+}
+.label a{
+	color:#fff; 
+	font-size:14px;  
+}
+.label a:hover{
+	color:red; 
+}
+.btn a{
+	color:red; 
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<h4>注册新用户</h4>
+	<h5>新用户请在这里注册<small class="pull-right"><strong>返回到</strong><span class="label"><a href="/index">首页</a></span></small></h5>
+	<form role="form" method="post" class="form-horizonta" onsubmit="return false">
+		<div class="form-group has-feedback">
+			<label class="control-label" for="username">用户名</label>
+			<input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" required>
+		</div>
+		<div class="form-group has-feedback">
+			<label class="control-label" for="password">密 码</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" required>
+		</div>
+		<div class="form-group has-feedback">
+			<label class="col--md-1 control-label" for="password">确认密码</label>
+			<input type="password" class="form-control" id="password1" name="password1" placeholder="请确认您的密码"  required>
+		</div>
+			<input type="submit" id="register1" class="btn btn-success btn-sm" value="完成">
+			<span><button type="submit" class="btn btn-primary btn-xs pull-right" id="login1"><strong>登陆</strong></button><strong class="pull-right">已有账号</strong></span>
+	</form>
+</div>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	$(function(){ 
+		$("#login1").click(function(){ 
+			location.href = 'login';
+		});
+		$("#register1").click(function(){ 
+			var username = $("#username").val();
+			var password = $("#password").val();
+			var password1 = $("#password1").val();
+			if(password !== password1){ 
+				$("#password").css("border","1px solid red");
+				$("#password1").css("border","1px solid red");
+			}else if(password === password1){
+			var data = {"uname":username,"upwd":password};
+			$.ajax({ 
+				url: '/register',
+				type: 'post',
+				data: data,
+				success: function(data,status){ 
+					if(status == 'success'){ 
+						location.href = 'login';
+					}
+				},
+				error: function(data,err){ 
+						location.href = 'register';
+				}
+			}); 
+		}
+		});
+	});
+</script>
+</body>
+</html>

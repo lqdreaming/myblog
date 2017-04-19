@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人登陆</title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
+	<script src="javascripts/bootstrap.min.js"></script>
+	<script src="javascripts/jquery.min.js"></script>
+	<script src="../public/javascripts/jquery.min.js"></script>
+	<script src="../publicjavascripts/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen">
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="APPID" data-redirecturi="/home1" charset="utf-8"></script> 
+<style type="text/css">
+*{margin:0;padding:0;}
+	body{
+	max-width:973px;
+	background:#000; 
+	}
+	.containblock{
+		width:350px;
+		height:600px;  
+		margin:0 auto;
+		margin-top:100px;  
+	}
+	.well{
+		width:300px; 
+		height:350px; 
+		padding-top:50px;  	
+	}
+	.well h2{
+		text-align:center;
+		margin-bottom:20px;   	
+	}
+	.control-label{
+		display:block; 
+		width:300px; 
+	}
+	.form-control{
+		width:230px; 
+		height:40px; 
+	}
+	.btn{ 
+		font-size:16px; 
+	}
+	.form-group{
+		width:260px;
+		height:60px;  
+	}
+	.loader{
+		width:300px;
+		height:60px;   
+		background:#666666; 
+		margin-top:-25px;
+		line-height:60px; 
+		text-align:center;
+	}
+	.loader span{  
+    display: inline-block;   
+    width: 15px;  
+    height: 15px; 
+    background: black;  
+    border-radius: 50px;  
+    -webkit-animation: loader 2s infinite alternate;  
+    -moz-animation: loader 2s infinite alternate; ;   
+	}  
+	.loader span:nth-of-type(2) {  
+	    -webkit-animation-delay: 0.5s;  
+	    -moz-animation-delay: 0.5s;  
+	}  
+	.loader span:nth-of-type(3) {  
+	    -webkit-animation-delay: 1s;  
+	    -moz-animation-delay: 1s;  
+	}  
+	.loader span:nth-of-type(4) {  
+	    -webkit-animation-delay: 1.5s;  
+	    -moz-animation-delay: 1.5s;  
+	}  
+	.loader span:nth-of-type(5) {  
+	    -webkit-animation-delay: 2s;  
+	    -moz-animation-delay: 2s;  
+	}  
+	@-webkit-keyframes loader {  
+	    0% {  
+	        opacity: 1; 
+	        background:#000;  
+	    }  
+	    100% {  
+	        opacity: 0.1; 
+	        background:#fff;  
+	    }  
+	}  
+	@-moz-keyframes loader {  
+	     0% {  
+	        opacity: 1; 
+	        background:#000;  
+	    }  
+	    100% {  
+	        opacity: 0.1; 
+	        background:#fff;  
+	    } 
+	} 
+	.form-control-feedback{
+		left:210px; 
+	}
+	.btn-info{
+		margin-left:15px; 
+		width:150px; 
+	}
+}  
+</style>
+</head>
+<body>
+<div class="container">
+<div class="containblock">
+	<form  class="well" role="form" method="post" onsubmit="return false">
+		<h2>Login</h2>
+		<div class="form-group has-feedback">
+			<label class="col-md-1 control-label" for="username">用户名</label>
+			<div class="col-md-6">
+				<span class="glyphicon glyphicon-user form-control-feedback"></span>
+				<input type="text" class="form-control" id="username" name="username" placeholder="用户名" required>
+			</div>
+		</div>
+		<div class="form-group has-feedback">
+			<label class="col-md-1 control-label" for="password">密　码</label>
+			<div class="col-md-6">
+				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+				<input type="password" class="form-control" id="password" name="password" placeholder="密码" required>
+			</div>
+		</div>
+		<div class="form-group has-feedback">
+			<button type="submit" id="login0" class="btn btn-info"><strong>login</strong></button>
+			<button type="button" class="btn btn-link" id="register0"><strong>register</strong></button>
+		</div>
+		<span id="qq_login_btn"></span> 
+	</form>
+	<div class="loader">  
+		    <span></span>  
+		    <span></span>  
+		    <span></span>  
+		    <span></span>  
+		    <span></span>  
+		</div> 
+</div>
+</div>
+<script type="text/javascript">
+    $(function(){ 
+        $("#register0").click(function(){ 
+            location.href = 'register';
+        });
+        $("#login0").click(function(){ 
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var data = {"uname":username,"upwd":password};
+            console.log(data);
+            $.ajax({ 
+                url:'/login',
+                type:'post',
+                data: data,
+                success: function(data,status){ 
+                    if(status == 'success'){ 
+                        location.href = 'home1';
+                    }
+                },
+                error: function(data,status){ 
+                    if(status == 'error'){ 
+                    	console.log(error);
+                        location.href = 'login';
+                    }
+                }
+            });
+        });
+    });
+</script> 
+<script type="text/javascript">  
+　QC.Login({//按默认样式插入QQ登录按钮  
+btnId:"qq_login_btn"    //插入按钮的节点id  
+　});  
+</script> 
+</body>
+</html>
